@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app"> <!-- Ativação do AngularJS + Chamada do Módulo --> 
+	<head>
+		<title>Hello World: Principais Características</title>
+		<meta charset="UTF-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+
+		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+		<script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,900' rel='stylesheet' type='text/css'>
+		
+		<script src="controller.js"></script>
+	</head>
+	<style>
+		body, h1, h2, h3, h4, h5, h6 {font-family: 'Roboto', sans-serif;;}
+	</style>
+	<body>
+		<div class="mdl-layout">
+			<div class="content">				
+				<div class="mdl-cell mdl-cell--12-col">
+					Hello <input type="text" ng-model="yourName"> <!-- Exemplo de Model Simples -->
+				<hr>
+					<h1>Hello {{yourName}}</h1>
+				</div>
+				<div class="mdl-cell mdl-cell--12-col" ng-controller="simpleController">
+					Qual o seu nome? <input type="text" ng-model="user.name"> <!-- Exemplo de Model com Controller-->
+				<hr>
+					<h1>Olá {{user.name}}</h1>
+				</div>
+				<div class="mdl-cell mdl-cell--12-col" ng-controller="countController">
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-button--accent" ng-click="addOne()">
+						<i class="material-icons">add</i>
+					</button> <!-- Exemplo de Model Count-->
+				<hr>
+					<p>Você já clicou: <strong>{{counter}}</strong></p>
+				</div>
+				<div class="mdl-cell mdl-cell--12-col" ng-controller="loopController">
+					<h3>Lista de Frutas</h3>
+					<ul>
+						<li ng-repeat="fruit in fruits">{{fruit}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
